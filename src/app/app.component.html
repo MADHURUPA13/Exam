@@ -1,0 +1,50 @@
+<div>
+  <input type="text" [(ngModel)]="mmm" placeholder="search the text">
+</div>
+<div>
+  <table class="table table-bordered">
+    <thead style="background-color:orchid;">
+      <th>TITLE</th>
+      <th>URL</th>
+      <th>CREATED_AT</th>
+      <th>AUTHOR</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of relt | search:mmm" (click)="submit(m)" data-toggle="modal" data-target="#myModal">
+        <td>{{m.title}}</td>
+        <td>{{m.url}}</td>
+        <td>{{m.created_at}}</td>
+        <td>{{m.author}}</td>
+        </tr>
+    </tbody>
+
+  </table>
+</div>
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h3 class="modal-title">Json Data</h3>
+      <button type="button" class="close" data-dismiss="modal">&times;</button></div>
+      <div class="modal-body">
+        <p>{{st|json}}</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" close="btn btn-success" data-dismiss="modal">close the data</button>
+
+      </div>
+     </div>
+    </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
